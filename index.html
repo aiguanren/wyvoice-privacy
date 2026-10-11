@@ -47,6 +47,10 @@
     .en { display: none; }
     body.show-en .zh { display: none; }
     body.show-en .en { display: block; }
+    .zh-hant { display: none; }
+    body.show-zh-hant .zh { display: none; }
+    body.show-zh-hant .en { display: none; }
+    body.show-zh-hant .zh-hant { display: block; }
     footer { text-align: center; font-size: 12px; opacity: .5; margin-top: 28px; }
     a { color: #d83a5b; }
 </style>
@@ -60,8 +64,9 @@
     </header>
 
     <div class="langs">
-        <a href="#" class="on" onclick="document.body.classList.remove('show-en');document.querySelectorAll('.langs a')[0].classList.add('on');document.querySelectorAll('.langs a')[1].classList.remove('on');return false;">简体中文</a>
-        <a href="#" onclick="document.body.classList.add('show-en');document.querySelectorAll('.langs a')[1].classList.add('on');document.querySelectorAll('.langs a')[0].classList.remove('on');return false;">English</a>
+        <a href="#" class="on" onclick="setLang('zh');return false;">简体中文</a>
+        <a href="#" onclick="setLang('zh-hant');return false;">繁體中文</a>
+        <a href="#" onclick="setLang('en');return false;">English</a>
     </div>
     <div class="meta">生效日期 2026年10月11日 · Effective Date October 11, 2026</div>
 
@@ -127,6 +132,71 @@
         <section class="card">
             <h2>十、联系我们</h2>
             <p>对本政策或隐私相关事宜有任何疑问，请联系：<a href="mailto:aiguanren@icloud.com">aiguanren@icloud.com</a></p>
+        </section>
+    </div>
+
+    <div class="zh-hant">
+        <section class="card">
+            <h2>一、概述</h2>
+            <p>語音工坊（下稱「本 App」）是一款 AI 語音生成工具，提供文字轉配音、聲音克隆、AI 聲音設計與語音轉文字等功能。我們高度重視你的隱私，本政策用大白話說明本 App 如何處理資料。你使用本 App 即表示同意本政策所述做法。</p>
+        </section>
+        <section class="card">
+            <h2>二、我們不做什麼</h2>
+            <ul>
+                <li>無需註冊帳號——本 App 沒有登入體系，我們不知道你是誰；</li>
+                <li>不含第三方廣告、統計分析或使用者行為追蹤元件；</li>
+                <li>不營運自有的使用者資料伺服器，不在我們自己的伺服器上儲存你的任何內容；</li>
+                <li>不出售你的任何資料。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>三、為提供服務而處理的資料</h2>
+            <p>生成語音與轉寫需要把必要內容傳送到雲端 AI 服務處理。具體如下：</p>
+            <ul>
+                <li><b>文字轉配音</b>——你輸入的文字與所選音色、情緒等參數，會透過加密通道傳送給第三方雲端語音引擎，生成的音檔返回後儲存在你的裝置上；</li>
+                <li><b>聲音克隆與 AI 聲音設計</b>——你錄製或匯入的音訊樣本僅用於建立你自己的專屬音色；請僅使用你本人或已獲得授權者的聲音；</li>
+                <li><b>語音轉文字</b>——你選擇的音訊會透過加密連結臨時上傳至物件儲存中轉，供轉寫服務讀取，轉寫完成後中轉檔案即被自動刪除；</li>
+                <li><b>背景音樂搜尋</b>——搜尋關鍵字僅用於本次檢索公開授權的音樂資源。</li>
+            </ul>
+            <p>上述雲端處理由符合行業標準的第三方服務提供商作為受託處理者完成，它們僅在為提供服務所必需的範圍內處理相關內容。如適用法律要求揭露具體處理者資訊，我們將依法提供。</p>
+        </section>
+        <section class="card">
+            <h2>四、資料儲存與同步</h2>
+            <ul>
+                <li>你的作品、音色記錄與偏好設定儲存在裝置本地；</li>
+                <li>在你開啟 iCloud 的前提下，上述記錄可經由你自己的 iCloud 帳號在你自己的裝置間同步，該資料儲存在你的 iCloud 空間中，我們無法存取；</li>
+                <li>你可以隨時在系統設定中關閉 iCloud 同步。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>五、內購與支付</h2>
+            <p>會員訂閱（如有）透過 Apple 的 App 內購買體系完成，支付資訊由 Apple 處理，本 App 與我們不接收、不儲存任何支付資訊。</p>
+        </section>
+        <section class="card">
+            <h2>六、資料保留與刪除</h2>
+            <ul>
+                <li>本地資料：你可在 App 內直接刪除作品與音色，解除安裝 App 即刪除裝置上的全部本地資料（iCloud 同步部分可在系統設定中管理）；</li>
+                <li>雲端處理：傳送給雲端服務的請求內容按各服務商的資料處理政策保留與處置，我們不額外留存。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>七、權限使用說明</h2>
+            <ul>
+                <li><b>麥克風</b>——僅在你主動錄製聲音樣本用於克隆時使用；</li>
+                <li><b>檔案存取</b>——僅在你主動匯入音訊時使用。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>八、兒童隱私</h2>
+            <p>本 App 不面向 13 歲以下兒童設計，我們不會有意收集兒童的個人資料。如你認為兒童向我們提供了個人資料，請聯絡我們，我們將及時刪除。</p>
+        </section>
+        <section class="card">
+            <h2>九、政策變更</h2>
+            <p>我們可能不時更新本政策，更新後會在本頁面發布並修訂生效日期。重大變更會透過 App 內公告等適當方式通知你。</p>
+        </section>
+        <section class="card">
+            <h2>十、聯絡我們</h2>
+            <p>對本政策或隱私相關事宜有任何疑問，請聯絡：<a href="mailto:aiguanren@icloud.com">aiguanren@icloud.com</a></p>
         </section>
     </div>
 
@@ -197,5 +267,24 @@
 
     <footer>© 2026 语音工坊 Voice Workshop</footer>
 </div>
+<script>
+function setLang(lang){
+    var b=document.body;
+    b.classList.remove('show-en');b.classList.remove('show-zh-hant');
+    if(lang==='en'){b.classList.add('show-en');}
+    if(lang==='zh-hant'){b.classList.add('show-zh-hant');}
+    var links=document.querySelectorAll('.langs a');
+    links[0].classList.toggle('on',lang==='zh');
+    links[1].classList.toggle('on',lang==='zh-hant');
+    links[2].classList.toggle('on',lang==='en');
+}
+(function(){
+    var m=location.search.match(/[?&]lang=([^&]+)/);
+    if(!m)return;
+    var lang=decodeURIComponent(m[1]);
+    if(lang==='zh-Hant'||lang==='zh-HK'||lang==='zh-MO'){setLang('zh-hant');}
+    else if(lang.indexOf('zh')!==0){setLang('en');}
+})();
+</script>
 </body>
 </html>
