@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语音工坊 · 隐私政策</title>
+<style>
+    :root { color-scheme: light dark; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        line-height: 1.75; color: #1d1d1f; background: #f5f5f7;
+        -webkit-text-size-adjust: 100%;
+    }
+    .dark body, body:has(#darkmode:checked) { color: #f5f5f7; background: #1d1d1f; }
+    @media (prefers-color-scheme: dark) {
+        body { color: #e8e8ed; background: #1c1c1e; }
+        .card { background: #2c2c2e !important; }
+        a { color: #6cb6ff !important; }
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
+    header.app { text-align: center; padding: 36px 0 8px; }
+    header.app .icon {
+        width: 72px; height: 72px; margin: 0 auto 14px; border-radius: 18px;
+        background: linear-gradient(135deg, #ff7a59, #ff4d6d);
+        display: flex; align-items: center; justify-content: center; font-size: 34px;
+    }
+    header.app h1 { font-size: 24px; font-weight: 700; }
+    header.app .sub { font-size: 14px; opacity: .6; margin-top: 4px; }
+    .langs { display: flex; gap: 8px; justify-content: center; margin: 20px 0 8px; }
+    .langs a {
+        font-size: 13px; text-decoration: none; padding: 6px 14px; border-radius: 999px;
+        background: rgba(125,125,145,.12); color: inherit;
+    }
+    .langs a.on { background: #ff4d6d; color: #fff; }
+    .meta { text-align: center; font-size: 12px; opacity: .55; margin-bottom: 20px; }
+    section.card {
+        background: #fff; border-radius: 16px; padding: 26px 24px; margin-bottom: 16px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    section.card h2 { font-size: 18px; margin-bottom: 12px; }
+    section.card p, section.card li { font-size: 15px; }
+    section.card p { margin-bottom: 10px; }
+    section.card ul { padding-left: 20px; }
+    section.card li { margin-bottom: 6px; }
+    .divider { border: none; border-top: 1px solid rgba(125,125,145,.18); margin: 36px 0; }
+    .en { display: none; }
+    body.show-en .zh { display: none; }
+    body.show-en .en { display: block; }
+    footer { text-align: center; font-size: 12px; opacity: .5; margin-top: 28px; }
+    a { color: #d83a5b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header class="app">
+        <div class="icon">🎙️</div>
+        <h1>语音工坊</h1>
+        <div class="sub">AI 配音 · 声音克隆 · 语音转文字</div>
+    </header>
+
+    <div class="langs">
+        <a href="#" class="on" onclick="document.body.classList.remove('show-en');document.querySelectorAll('.langs a')[0].classList.add('on');document.querySelectorAll('.langs a')[1].classList.remove('on');return false;">简体中文</a>
+        <a href="#" onclick="document.body.classList.add('show-en');document.querySelectorAll('.langs a')[1].classList.add('on');document.querySelectorAll('.langs a')[0].classList.remove('on');return false;">English</a>
+    </div>
+    <div class="meta">生效日期 2026年10月11日 · Effective Date October 11, 2026</div>
+
+    <div class="zh">
+        <section class="card">
+            <h2>一、概述</h2>
+            <p>语音工坊（下称"本 App"）是一款 AI 语音生成工具，提供文字转配音、声音克隆、AI 声音设计与语音转文字等功能。我们高度重视你的隐私，本政策用大白话说明本 App 如何处理数据。你使用本 App 即表示同意本政策所述做法。</p>
+        </section>
+        <section class="card">
+            <h2>二、我们不做什么</h2>
+            <ul>
+                <li>无需注册账号——本 App 没有登录体系，我们不知道你是谁；</li>
+                <li>不含第三方广告、统计分析或用户行为跟踪组件；</li>
+                <li>不运营自有的用户数据服务器，不在我们自己的服务器上存储你的任何内容；</li>
+                <li>不出售你的任何数据。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>三、为提供服务而处理的数据</h2>
+            <p>生成语音与转写需要把必要内容发送到云端 AI 服务处理。具体如下：</p>
+            <ul>
+                <li><b>文字转配音</b>——你输入的文本与所选音色、情绪等参数，会通过加密通道发送给第三方云端语音引擎，生成的音频返回后保存在你的设备上；</li>
+                <li><b>声音克隆与 AI 声音设计</b>——你录制或导入的音频样本仅用于创建你自己的专属音色；请仅使用你本人或已获得授权者的声音；</li>
+                <li><b>语音转文字</b>——你选择的音频会通过加密链接临时上传至对象存储中转，供转写服务读取，转写完成后中转文件即被自动删除；</li>
+                <li><b>背景音乐搜索</b>——搜索关键词仅用于本次检索公开授权的音乐资源。</li>
+            </ul>
+            <p>上述云端处理由符合行业标准的第三方服务提供商作为受托处理者完成，它们仅在为提供服务所必需的范围内处理相关内容。如适用法律要求披露具体处理者信息，我们将依法提供。</p>
+        </section>
+        <section class="card">
+            <h2>四、数据存储与同步</h2>
+            <ul>
+                <li>你的作品、音色记录与偏好设置保存在设备本地；</li>
+                <li>在你开启 iCloud 的前提下，上述记录可经由你自己的 iCloud 账号在你自己的设备间同步，该数据存储在你的 iCloud 空间中，我们无法访问；</li>
+                <li>你可以随时在系统设置中关闭 iCloud 同步。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>五、内购与支付</h2>
+            <p>会员订阅（如有）通过 Apple 的 App 内购买体系完成，支付信息由 Apple 处理，本 App 与我们不接收、不存储任何支付信息。</p>
+        </section>
+        <section class="card">
+            <h2>六、数据保留与删除</h2>
+            <ul>
+                <li>本地数据：你可在 App 内直接删除作品与音色，卸载 App 即删除设备上的全部本地数据（iCloud 同步部分可在系统设置中管理）；</li>
+                <li>云端处理：发送给云端服务的请求内容按各服务商的数据处理政策保留与处置，我们不额外留存。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>七、权限使用说明</h2>
+            <ul>
+                <li><b>麦克风</b>——仅在你主动录制声音样本用于克隆时使用；</li>
+                <li><b>文件访问</b>——仅在你主动导入音频时使用。</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>八、儿童隐私</h2>
+            <p>本 App 不面向 13 岁以下儿童设计，我们不会有意收集儿童的个人信息。如你认为儿童向我们提供了个人信息，请联系我们，我们将及时删除。</p>
+        </section>
+        <section class="card">
+            <h2>九、政策变更</h2>
+            <p>我们可能不时更新本政策，更新后会在本页面发布并修订生效日期。重大变更会通过 App 内公告等适当方式通知你。</p>
+        </section>
+        <section class="card">
+            <h2>十、联系我们</h2>
+            <p>对本政策或隐私相关事宜有任何疑问，请联系：<a href="mailto:wangyong.xu@icloud.com">wangyong.xu@icloud.com</a></p>
+        </section>
+    </div>
+
+    <div class="en">
+        <section class="card">
+            <h2>1. Overview</h2>
+            <p>Voice Workshop ("this App") is an AI voice generation tool offering text-to-speech, voice cloning, AI voice design and speech-to-text. We take your privacy seriously. This policy explains in plain language how the App handles data. By using the App, you agree to the practices described here.</p>
+        </section>
+        <section class="card">
+            <h2>2. What We Don't Do</h2>
+            <ul>
+                <li>No account required — the App has no login system and we don't know who you are;</li>
+                <li>No third-party ads, analytics, or user-behavior tracking components;</li>
+                <li>We operate no user-data servers of our own and store none of your content on our own servers;</li>
+                <li>We do not sell any of your data.</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>3. Data Processed to Provide the Service</h2>
+            <p>Generating speech and transcriptions requires sending the necessary content to cloud AI services. Specifically:</p>
+            <ul>
+                <li><b>Text to speech</b> — the text you enter and the voice, emotion and other parameters you choose are sent over an encrypted channel to third-party cloud speech engines; the generated audio is returned and saved on your device;</li>
+                <li><b>Voice cloning & AI voice design</b> — audio samples you record or import are used solely to create your own custom voice; only use the voice of yourself or someone who has authorized you;</li>
+                <li><b>Speech to text</b> — the audio you select is temporarily uploaded via an encrypted link to object storage for the transcription service to read; the intermediate file is automatically deleted once transcription completes;</li>
+                <li><b>Background music search</b> — search keywords are used only for that search of publicly licensed music.</li>
+            </ul>
+            <p>Cloud processing above is performed by qualified third-party providers acting as processors, handling content only as necessary to provide the service. If applicable law requires disclosure of specific processors, we will provide it as required.</p>
+        </section>
+        <section class="card">
+            <h2>4. Storage & Sync</h2>
+            <ul>
+                <li>Your works, voice records and preferences are stored locally on your device;</li>
+                <li>If you enable iCloud, those records may sync across your own devices via your own iCloud account; the data lives in your iCloud storage, which we cannot access;</li>
+                <li>You can turn off iCloud sync in system Settings at any time.</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>5. In-App Purchases & Payments</h2>
+            <p>Membership subscriptions (if any) are processed through Apple's in-app purchase system. Payment information is handled by Apple; the App and we never receive or store any payment information.</p>
+        </section>
+        <section class="card">
+            <h2>6. Retention & Deletion</h2>
+            <ul>
+                <li>Local data: you can delete works and voices directly in the App; uninstalling removes all local data from the device (iCloud-synced data can be managed in system Settings);</li>
+                <li>Cloud processing: content sent to cloud services is retained and disposed of per each provider's data policies; we keep no additional copies.</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>7. Permissions</h2>
+            <ul>
+                <li><b>Microphone</b> — used only when you actively record a voice sample for cloning;</li>
+                <li><b>File access</b> — used only when you actively import an audio file.</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>8. Children's Privacy</h2>
+            <p>The App is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us personal information, contact us and we will delete it promptly.</p>
+        </section>
+        <section class="card">
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this policy from time to time. Updates will be published on this page with a revised effective date. Material changes will be announced appropriately, including in the App.</p>
+        </section>
+        <section class="card">
+            <h2>10. Contact</h2>
+            <p>For any questions about this policy or privacy matters, contact: <a href="mailto:wangyong.xu@icloud.com">wangyong.xu@icloud.com</a></p>
+        </section>
+    </div>
+
+    <footer>© 2026 语音工坊 Voice Workshop</footer>
+</div>
+</body>
+</html>
