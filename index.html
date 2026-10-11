@@ -51,6 +51,9 @@
     body.show-zh-hant .zh { display: none; }
     body.show-zh-hant .en { display: none; }
     body.show-zh-hant .zh-hant { display: block; }
+    .langs { max-width: 92%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .langs::-webkit-scrollbar { display: none; }
+    .langblock { display: none; }
     footer { text-align: center; font-size: 12px; opacity: .5; margin-top: 28px; }
     a { color: #d83a5b; }
 </style>
@@ -64,13 +67,11 @@
     </header>
 
     <div class="langs">
-        <a href="#" class="on" onclick="setLang('zh');return false;">简体中文</a>
-        <a href="#" onclick="setLang('zh-hant');return false;">繁體中文</a>
-        <a href="#" onclick="setLang('en');return false;">English</a>
-    </div>
+<a href="#" onclick="setLang('zh');return false;">简体中文</a><a href="#" onclick="setLang('zh-hant');return false;">繁體中文</a><a href="#" onclick="setLang('en');return false;">English</a><a href="#" onclick="setLang('ja');return false;">日本語</a><a href="#" onclick="setLang('ko');return false;">한국어</a><a href="#" onclick="setLang('es');return false;">Español</a><a href="#" onclick="setLang('pt-PT');return false;">Português</a><a href="#" onclick="setLang('de');return false;">Deutsch</a><a href="#" onclick="setLang('fr');return false;">Français</a><a href="#" onclick="setLang('ru');return false;">Русский</a><a href="#" onclick="setLang('vi');return false;">Tiếng Việt</a><a href="#" onclick="setLang('th');return false;">ไทย</a><a href="#" onclick="setLang('id');return false;">Indonesia</a>
+    
     <div class="meta">生效日期 2026年10月11日 · Effective Date October 11, 2026</div>
 
-    <div class="zh">
+    <div class="langblock" data-lang="zh" style="display:block;">
         <section class="card">
             <h2>一、概述</h2>
             <p>语音工坊（下称"本 App"）是一款 AI 语音生成工具，提供文字转配音、声音克隆、AI 声音设计与语音转文字等功能。我们高度重视你的隐私，本政策用大白话说明本 App 如何处理数据。你使用本 App 即表示同意本政策所述做法。</p>
@@ -135,7 +136,7 @@
         </section>
     </div>
 
-    <div class="zh-hant">
+    <div class="langblock" data-lang="zh-hant">
         <section class="card">
             <h2>一、概述</h2>
             <p>語音工坊（下稱「本 App」）是一款 AI 語音生成工具，提供文字轉配音、聲音克隆、AI 聲音設計與語音轉文字等功能。我們高度重視你的隱私，本政策用大白話說明本 App 如何處理資料。你使用本 App 即表示同意本政策所述做法。</p>
@@ -200,7 +201,7 @@
         </section>
     </div>
 
-    <div class="en">
+    <div class="langblock" data-lang="en">
         <section class="card">
             <h2>1. Overview</h2>
             <p>Voice Workshop ("this App") is an AI voice generation tool offering text-to-speech, voice cloning, AI voice design and speech-to-text. We take your privacy seriously. This policy explains in plain language how the App handles data. By using the App, you agree to the practices described here.</p>
@@ -269,21 +270,25 @@
 </div>
 <script>
 function setLang(lang){
-    var b=document.body;
-    b.classList.remove('show-en');b.classList.remove('show-zh-hant');
-    if(lang==='en'){b.classList.add('show-en');}
-    if(lang==='zh-hant'){b.classList.add('show-zh-hant');}
+    var blocks=document.querySelectorAll('.langblock');
+    var hit=false;
+    blocks.forEach(function(b){ if(b.dataset.lang===lang){ b.style.display='block'; hit=true; } else { b.style.display='none'; } });
+    if(!hit){ return setLang(lang.indexOf('zh')===0?'zh':'en'); }
     var links=document.querySelectorAll('.langs a');
-    links[0].classList.toggle('on',lang==='zh');
-    links[1].classList.toggle('on',lang==='zh-hant');
-    links[2].classList.toggle('on',lang==='en');
+    for(var i=0;i<links.length;i++){ links[i].classList.remove('on'); }
+    document.body.classList.remove('show-en');document.body.classList.remove('show-zh-hant');
+    if(lang==='en'){document.body.classList.add('show-en');}
+    if(lang==='zh-hant'){document.body.classList.add('show-zh-hant');}
+    var links2=document.querySelectorAll('.langs a');
+    for(var j=0;j<links2.length;j++){ if(j=== indexOfLang(lang)){ links2[j].classList.add('on'); } }
+    function indexOfLang(l){ var arr=['zh','zh-hant','en','ja','ko','es','pt','de','fr','ru','vi','th','id']; return arr.indexOf(l); }
 }
 (function(){
     var m=location.search.match(/[?&]lang=([^&]+)/);
     if(!m)return;
     var lang=decodeURIComponent(m[1]);
-    if(lang==='zh-Hant'||lang==='zh-HK'||lang==='zh-MO'){setLang('zh-hant');}
-    else if(lang.indexOf('zh')!==0){setLang('en');}
+    var mapped = lang==='zh-Hans'?'zh':(lang==='zh-Hant'||lang==='zh-HK'||lang==='zh-MO'?'zh-hant':(lang==='pt-PT'?'pt':lang));
+    setLang(mapped);
 })();
 </script>
 </body>
